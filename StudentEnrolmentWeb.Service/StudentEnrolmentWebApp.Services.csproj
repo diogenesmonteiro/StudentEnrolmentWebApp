@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.16" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\StudentEnrolmentWebApp.Domain\StudentEnrolmentWebApp.Domain.csproj" />
+    <ProjectReference Include="..\StudentEnrolmentWebApp.Infrastucture\StudentEnrolmentWebApp.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

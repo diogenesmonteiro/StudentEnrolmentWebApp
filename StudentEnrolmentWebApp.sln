@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32802.440
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentEnrolmentWebApp", "StudentEnrolmentWebApp\StudentEnrolmentWebApp.csproj", "{01774A43-6F91-4AF5-B368-94FC920D38CB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{480EFA2B-0041-4CEA-A23F-FFE1A2CAF66A} = {480EFA2B-0041-4CEA-A23F-FFE1A2CAF66A}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentEnrolmentWebApp.Tests", "StudentEnrolmentWebAppTests\StudentEnrolmentWebApp.Tests.csproj", "{44853635-7B27-45CC-89D8-561B2F233EDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentEnrolmentWebApp.Services", "StudentEnrolmentWeb.Service\StudentEnrolmentWebApp.Services.csproj", "{480EFA2B-0041-4CEA-A23F-FFE1A2CAF66A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentEnrolmentWebApp.Domain", "StudentEnrolmentWebApp.Domain\StudentEnrolmentWebApp.Domain.csproj", "{B7CC09DA-0F18-4EED-82A5-DA909076DB90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentEnrolmentWebApp.Infrastructure", "StudentEnrolmentWebApp.Infrastucture\StudentEnrolmentWebApp.Infrastructure.csproj", "{0A3E74D9-7A66-4E7A-BF42-DC1182E91803}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{01774A43-6F91-4AF5-B368-94FC920D38CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01774A43-6F91-4AF5-B368-94FC920D38CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01774A43-6F91-4AF5-B368-94FC920D38CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01774A43-6F91-4AF5-B368-94FC920D38CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44853635-7B27-45CC-89D8-561B2F233EDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44853635-7B27-45CC-89D8-561B2F233EDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44853635-7B27-45CC-89D8-561B2F233EDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44853635-7B27-45CC-89D8-561B2F233EDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{480EFA2B-0041-4CEA-A23F-FFE1A2CAF66A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{480EFA2B-0041-4CEA-A23F-FFE1A2CAF66A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{480EFA2B-0041-4CEA-A23F-FFE1A2CAF66A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{480EFA2B-0041-4CEA-A23F-FFE1A2CAF66A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7CC09DA-0F18-4EED-82A5-DA909076DB90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7CC09DA-0F18-4EED-82A5-DA909076DB90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7CC09DA-0F18-4EED-82A5-DA909076DB90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7CC09DA-0F18-4EED-82A5-DA909076DB90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A3E74D9-7A66-4E7A-BF42-DC1182E91803}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A3E74D9-7A66-4E7A-BF42-DC1182E91803}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A3E74D9-7A66-4E7A-BF42-DC1182E91803}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A3E74D9-7A66-4E7A-BF42-DC1182E91803}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {75481118-4C03-401F-86A4-54D3FC11DA3D}
+	EndGlobalSection
+EndGlobal
