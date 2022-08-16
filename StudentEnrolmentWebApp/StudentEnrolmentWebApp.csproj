@@ -17,4 +17,8 @@
     <ProjectReference Include="..\StudentEnrolmentWeb.Service\StudentEnrolmentWebApp.Services.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
 </Project>

@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 using MySql.EntityFrameworkCore.Metadata;
 
-namespace StudentEnrolmentWebApp.Migrations
+namespace StudentEnrolmentWebApp.Infrastructure.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class InitialDbCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

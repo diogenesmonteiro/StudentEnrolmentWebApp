@@ -5,20 +5,20 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using StudentEnrolmentWebApp.Infrastructure.Data;
 
-namespace StudentEnrolmentWebApp.Migrations
+namespace StudentEnrolmentWebApp.Infrastructure.Migrations
 {
     [DbContext(typeof(ApiStudentEnrolmentDbContext))]
-    [Migration("20220811081808_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20220816142231_InitialDbCreate")]
+    partial class InitialDbCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 64)
-                .HasAnnotation("ProductVersion", "5.0.17");
+                .HasAnnotation("ProductVersion", "5.0.16");
 
-            modelBuilder.Entity("StudentEnrolmentWebApp.Models.Course", b =>
+            modelBuilder.Entity("StudentEnrolmentWebApp.Domain.Models.Course", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -40,7 +40,7 @@ namespace StudentEnrolmentWebApp.Migrations
                     b.ToTable("Courses");
                 });
 
-            modelBuilder.Entity("StudentEnrolmentWebApp.Models.CourseMembership", b =>
+            modelBuilder.Entity("StudentEnrolmentWebApp.Domain.Models.CourseMembership", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -57,7 +57,7 @@ namespace StudentEnrolmentWebApp.Migrations
                     b.ToTable("CourseMemberships");
                 });
 
-            modelBuilder.Entity("StudentEnrolmentWebApp.Models.CourseSubject", b =>
+            modelBuilder.Entity("StudentEnrolmentWebApp.Domain.Models.CourseSubject", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -74,7 +74,7 @@ namespace StudentEnrolmentWebApp.Migrations
                     b.ToTable("CourseSubjects");
                 });
 
-            modelBuilder.Entity("StudentEnrolmentWebApp.Models.Student", b =>
+            modelBuilder.Entity("StudentEnrolmentWebApp.Domain.Models.Student", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -93,7 +93,7 @@ namespace StudentEnrolmentWebApp.Migrations
                     b.ToTable("Students");
                 });
 
-            modelBuilder.Entity("StudentEnrolmentWebApp.Models.Subject", b =>
+            modelBuilder.Entity("StudentEnrolmentWebApp.Domain.Models.Subject", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
