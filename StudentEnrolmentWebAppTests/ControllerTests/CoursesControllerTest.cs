@@ -21,7 +21,7 @@ namespace StudentEnrolmentWebApp.Tests.ControllerTests
             var controller = new CoursesController(mockRepo.Object);
             var result = controller.Get().Result;
 
-            Assert.IsType(typeof(OkObjectResult), result);
+            Assert.IsType<OkObjectResult>(result);
 
             var okObject = result as OkObjectResult;
             var coursesList = okObject.Value as IEnumerable<Course>;
@@ -40,7 +40,7 @@ namespace StudentEnrolmentWebApp.Tests.ControllerTests
             var controller = new CoursesController(mockRepo.Object);
             var result = controller.Get(1).Result;
 
-            Assert.IsType(typeof(OkObjectResult), result);
+            Assert.IsType<OkObjectResult>(result);
 
             var okObject = result as OkObjectResult;
             var course = okObject.Value as Course;
@@ -48,7 +48,7 @@ namespace StudentEnrolmentWebApp.Tests.ControllerTests
             Assert.Equal(1, course.Id);
             Assert.Equal("Computer Science Degree", course.Name);
             Assert.Equal("A computer science degree is...", course.Description);
-            Assert.Equal(true, course.IsPartFunded);
+            Assert.True(course.IsPartFunded);
             
             mockRepo.Verify(m => m.GetById(1), Times.Once);
         }
@@ -68,7 +68,7 @@ namespace StudentEnrolmentWebApp.Tests.ControllerTests
                 IsPartFunded = true
             }).Result;
 
-            Assert.IsType(typeof(StatusCodeResult), result);
+            Assert.IsType<StatusCodeResult>(result);
 
             mockRepo.Verify(m => m.Add(It.IsAny<Course>()), Times.Once);
         }
@@ -87,7 +87,7 @@ namespace StudentEnrolmentWebApp.Tests.ControllerTests
                 IsPartFunded = true
             }).Result;
 
-            Assert.IsType(typeof(OkObjectResult), result);
+            Assert.IsType<OkObjectResult>(result);
 
             mockRepo.Verify(m => m.Update(It.IsAny<int>(), It.IsAny<Course>()), Times.Once);
         }
@@ -101,7 +101,7 @@ namespace StudentEnrolmentWebApp.Tests.ControllerTests
             var controller = new CoursesController(mockRepo.Object);
             var result = controller.Delete(1).Result;
 
-            Assert.IsType(typeof(OkObjectResult), result);
+            Assert.IsType<OkObjectResult>(result);
 
             mockRepo.Verify(m => m.Remove(It.IsAny<int>()), Times.Once);
         }

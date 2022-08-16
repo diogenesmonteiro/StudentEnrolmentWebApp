@@ -21,7 +21,7 @@ namespace StudentEnrolmentWebApp.Tests.ControllerTests
             var controller = new CourseMembershipsController(mockRepo.Object);
             var result = controller.Get().Result;
 
-            Assert.IsType(typeof(OkObjectResult), result);
+            Assert.IsType<OkObjectResult>(result);
 
             var okObject = result as OkObjectResult;
             var courseMembershipsList = okObject.Value as IEnumerable<CourseMembership>;
@@ -40,7 +40,7 @@ namespace StudentEnrolmentWebApp.Tests.ControllerTests
             var controller = new CourseMembershipsController(mockRepo.Object);
             var result = controller.Get(1).Result;
 
-            Assert.IsType(typeof(OkObjectResult), result);
+            Assert.IsType<OkObjectResult>(result);
 
             var okObject = result as OkObjectResult;
             var courseMembership = okObject.Value as CourseMembership;
@@ -66,7 +66,7 @@ namespace StudentEnrolmentWebApp.Tests.ControllerTests
                 CourseId = 2
             }).Result;
 
-            Assert.IsType(typeof(StatusCodeResult), result);
+            Assert.IsType<StatusCodeResult>(result);
 
             mockRepo.Verify(m => m.Add(It.IsAny<CourseMembership>()), Times.Once);
         }
@@ -84,7 +84,7 @@ namespace StudentEnrolmentWebApp.Tests.ControllerTests
                 CourseId = 2
             }).Result;
 
-            Assert.IsType(typeof(OkObjectResult), result);
+            Assert.IsType<OkObjectResult>(result);
 
             mockRepo.Verify(m => m.Update(It.IsAny<int>(), It.IsAny<CourseMembership>()), Times.Once);
         }
@@ -98,7 +98,7 @@ namespace StudentEnrolmentWebApp.Tests.ControllerTests
             var controller = new CourseMembershipsController(mockRepo.Object);
             var result = controller.Delete(1).Result;
 
-            Assert.IsType(typeof(OkObjectResult), result);
+            Assert.IsType<OkObjectResult>(result);
 
             mockRepo.Verify(m => m.Remove(It.IsAny<int>()), Times.Once);
         }

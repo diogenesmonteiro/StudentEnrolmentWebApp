@@ -21,7 +21,7 @@ namespace StudentEnrolmentWebApp.Tests.ControllerTests
             var controller = new SubjectsController(mockRepo.Object);
             var result = controller.Get().Result;
 
-            Assert.IsType(typeof(OkObjectResult), result);
+            Assert.IsType<OkObjectResult>(result);
 
             var okObject = result as OkObjectResult;
             var subjectsList = okObject.Value as IEnumerable<Subject>;
@@ -40,7 +40,7 @@ namespace StudentEnrolmentWebApp.Tests.ControllerTests
             var controller = new SubjectsController(mockRepo.Object);
             var result = controller.Get(1).Result;
 
-            Assert.IsType(typeof(OkObjectResult), result);
+            Assert.IsType<OkObjectResult>(result);
 
             var okObject = result as OkObjectResult;
             var subject = okObject.Value as Subject;
@@ -66,7 +66,7 @@ namespace StudentEnrolmentWebApp.Tests.ControllerTests
                 Description = "Description of the subject"
             }).Result;
 
-            Assert.IsType(typeof(StatusCodeResult), result);
+            Assert.IsType<StatusCodeResult>(result);
 
             mockRepo.Verify(m => m.Add(It.IsAny<Subject>()), Times.Once);
         }
@@ -84,7 +84,7 @@ namespace StudentEnrolmentWebApp.Tests.ControllerTests
                 Description = "Description of the subject"
             }).Result;
 
-            Assert.IsType(typeof(OkObjectResult), result);
+            Assert.IsType<OkObjectResult>(result);
 
             mockRepo.Verify(m => m.Update(It.IsAny<int>(), It.IsAny<Subject>()), Times.Once);
         }
@@ -98,7 +98,7 @@ namespace StudentEnrolmentWebApp.Tests.ControllerTests
             var controller = new SubjectsController(mockRepo.Object);
             var result = controller.Delete(1).Result;
 
-            Assert.IsType(typeof(OkObjectResult), result);
+            Assert.IsType<OkObjectResult>(result);
 
             mockRepo.Verify(m => m.Remove(It.IsAny<int>()), Times.Once);
         }

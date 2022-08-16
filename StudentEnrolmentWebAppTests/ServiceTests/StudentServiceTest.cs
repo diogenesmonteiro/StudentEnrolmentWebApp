@@ -20,7 +20,7 @@ namespace StudentEnrolmentWebApp.Tests.ServiceTests
             var service = new StudentService(mockRepo.Object);
             var result = service.GetAll().Result;
 
-            Assert.IsType(typeof(List<Student>), result);
+            Assert.IsType<List<Student>>(result);
             Assert.Equal(3, result.Count());
 
             mockRepo.Verify(m => m.GetAll(), Times.Once);
@@ -35,7 +35,7 @@ namespace StudentEnrolmentWebApp.Tests.ServiceTests
             var service = new StudentService(mockRepo.Object);
             var result = service.GetById(1).Result;
 
-            Assert.IsType(typeof(Student), result);
+            Assert.IsType<Student>(result);
             Assert.Equal(1, result.Id);
             Assert.Equal("John", result.FirstName);
             Assert.Equal("Smith", result.LastName);
