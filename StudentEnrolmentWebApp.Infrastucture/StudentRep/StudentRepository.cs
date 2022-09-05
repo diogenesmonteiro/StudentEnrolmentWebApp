@@ -15,12 +15,12 @@ namespace StudentEnrolmentWebApp.Infrastructure.StudentRep
             _dbContext = dbContext;
         }
 
-        public Task<IEnumerable<Student>> GetAll() =>
-            Task.FromResult<IEnumerable<Student>>(_dbContext.Students.ToList<Student>());
+        public async Task<IEnumerable<Student>> GetAll() =>
+            await Task.FromResult<IEnumerable<Student>>(_dbContext.Students.ToList<Student>());
 
-        public Task<Student> GetById(int id)
+        public async Task<Student> GetById(int id)
         {
-            return Task.FromResult<Student>(_dbContext.Students.Find(id));
+            return await Task.FromResult<Student>(_dbContext.Students.Find(id));
         }
 
         public async Task Add(Student newStudent)

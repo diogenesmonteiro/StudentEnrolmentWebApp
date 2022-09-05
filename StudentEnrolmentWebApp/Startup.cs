@@ -41,7 +41,7 @@ namespace StudentEnrolmentWebApp
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "StudentEnrolmentWebApp", Version = "v1" });
             });
             services.AddDbContext<ApiStudentEnrolmentDbContext>(option => 
-                option.UseMySQL("persistsecurityinfo=True;password=abcd1234;user id=devuser;server=localhost;database=StudentEnrolment;"));
+                option.UseMySQL(Configuration.GetConnectionString("StudentEnrolmentDB")));
 
             services.AddScoped<IStudentService, StudentService>();
             services.AddScoped<ICourseService, CourseService>();
