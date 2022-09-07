@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using StudentEnrolmentWebApp.Domain.Models;
@@ -36,6 +39,11 @@ namespace StudentEnrolmentWebApp.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] Subject newSubject)
         {
+            Task<IEnumerable<Subject>> subjects = _subjectService.GetAll();
+            var lastSubjectId = subjects.Result.Last().Id;
+
+            newSubject.Id = lastSubjectId + 1;
+
             await _subjectService.Add(newSubject);
             return StatusCode(StatusCodes.Status201Created);
         }

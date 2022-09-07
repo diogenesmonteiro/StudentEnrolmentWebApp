@@ -15,8 +15,10 @@ namespace StudentEnrolmentWebApp.Infrastructure.StudentRep
             _dbContext = dbContext;
         }
 
-        public async Task<IEnumerable<Student>> GetAll() =>
-            await Task.FromResult<IEnumerable<Student>>(_dbContext.Students.ToList<Student>());
+        public async Task<IEnumerable<Student>> GetAll()
+        {
+            return await Task.FromResult<IEnumerable<Student>>(_dbContext.Students.ToList<Student>());
+        }
 
         public async Task<Student> GetById(int id)
         {

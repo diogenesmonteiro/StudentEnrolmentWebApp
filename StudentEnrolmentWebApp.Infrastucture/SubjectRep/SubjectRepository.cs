@@ -17,12 +17,14 @@ namespace StudentEnrolmentWebApp.Infrastructure.SubjectRep
             _dbContext = dbContext;
         }
 
-        public Task<IEnumerable<Subject>> GetAll() =>
-            Task.FromResult<IEnumerable<Subject>>(_dbContext.Subjects.ToList<Subject>());
-
-        public Task<Subject> GetById(int id)
+        public async Task<IEnumerable<Subject>> GetAll()
         {
-            return Task.FromResult<Subject>(_dbContext.Subjects.Find(id));
+            return await Task.FromResult<IEnumerable<Subject>>(_dbContext.Subjects.ToList<Subject>());
+        }
+
+        public async Task<Subject> GetById(int id)
+        {
+            return await Task.FromResult<Subject>(_dbContext.Subjects.Find(id));
         }
 
         public async Task Add(Subject newSubject)
