@@ -44,14 +44,14 @@ namespace StudentEnrolmentWebApp.Controllers
         public async Task<IActionResult> Put(int id, [FromBody] CourseSubject newCourseSubject)
         {
             await _courseSubjectsService.Update(id, newCourseSubject);
-            return Ok("Record updated successfully");
+            return Ok(newCourseSubject);
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
             await _courseSubjectsService.Remove(id);
-            return Ok("Record deleted successfully");
+            return Ok();
         }
     }
 }
